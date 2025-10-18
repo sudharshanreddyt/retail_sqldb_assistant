@@ -49,14 +49,17 @@ This project is an end-to-end Generative AI application that allows users to que
     Execute the `db_creation_atliq_t_shirts.sql` file (found in the `database` folder of the project repository) in your `MySQL Workbench`.
 
     This script will:
+    
         1. Create a new database named atliq_tshirts.
+
         2. Create the necessary tables (e.g., t_shirts, discounts).
+
         3. Populate those tables with sample inventory data for the retail store.
 
 6. **Create the SQL connection**
 
-    Add the following variables to your existing .env file, replacing the placeholders with your actual MySQL credentials:
-    
+    Add the following variables to your existing `.env` file, replacing the placeholders with your actual MySQL credentials:
+
     ```env 
     MYSQL_HOST="localhost"
     MYSQL_USER="root" # Or your MySQL username
