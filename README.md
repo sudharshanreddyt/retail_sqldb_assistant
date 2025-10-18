@@ -45,10 +45,24 @@ This project is an end-to-end Generative AI application that allows users to que
    GOOGLE_API_KEY=your_api_key_here
    ```
 
-5. **Create the SQL connection**
+5. **Set Up the MySQL Database Locally**
+    Execute the `db_creation_atliq_t_shirts.sql` file (found in the `database` folder of the project repository) in your `MySQL Workbench`.
 
-    Make sure you are actually connecting to the sql server in the local host and replace the variables for db_user, db_password in `langchain_helper.py`
+    This script will:
+        1. Create a new database named atliq_tshirts.
+        2. Create the necessary tables (e.g., t_shirts, discounts).
+        3. Populate those tables with sample inventory data for the retail store.
 
+6. **Create the SQL connection**
+
+    Add the following variables to your existing .env file, replacing the placeholders with your actual MySQL credentials:
+    
+    ```env 
+    MYSQL_HOST="localhost"
+    MYSQL_USER="root" # Or your MySQL username
+    MYSQL_PASSWORD="YOUR_MYSQL_PASSWORD" # Your MySQL password
+    MYSQL_DATABASE="atliq_tshirts" # The database created in Step 5
+    ```
 
 ### Run the Main Application
 
@@ -64,6 +78,8 @@ RETAIL_SQLDB_ASSISTANT/
 ├── __pycache__/                # Python cache (not in git)
 ├── .env                        # Environment variables (not in git)
 ├── .gitignore                  # Git ignore file
+├── database                    # Folder that contains the mysql file for creating the database
+├── outputs                     # Folder that contains the final streamlit output images
 ├── langchain_helper.py         # Core LangChain chains and logic
 ├── main.py                     # Main application entry point
 ├── requirements.txt            # Project dependencies

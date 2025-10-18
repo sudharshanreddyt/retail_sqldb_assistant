@@ -23,10 +23,10 @@ def get_fewshot_db_chain():
     )
 
     # 2. Create the SQL connection
-    db_user = "root"
-    db_password = "your_password"
-    db_host = "localhost"
-    db_name="atliq_tshirts"
+    db_user = os.getenv("MYSQL_USER")
+    db_password = os.getenv("MYSQL_PASSWORD")
+    db_host = os.getenv("MYSQL_HOST")
+    db_name=os.getenv("MYSQL_DATABASE")
 
     database_uri = f"mysql+mysqlconnector://{db_user}:{db_password}@{db_host}/{db_name}"
     db = SQLDatabase.from_uri(database_uri = database_uri, sample_rows_in_table_info = 3)
